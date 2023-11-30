@@ -1,22 +1,20 @@
 package Controlador;
 
-import Clases.*;
-import javax.swing.*;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
-public class csvSeleccion {
+public class csvAlemania {
 
     // ========== ATRIBUTOS ==========
-    public static final String nombreArchivo = "Chile.csv";
+    public static final String nombreArchivo = "Alemania.csv";
 
 
-
-    // ===== LISTADO SELECCIONES =====
-    public static List<Object[]> listadoSelecciones() {
-        List<Object[]> seleccionesData = new ArrayList<>();
+    // ===== LISTADO JUGADORES =====
+    public static List<Object[]> listadoAlemania() {
+        List<Object[]> alemaniaData = new ArrayList<>();
 
         try {
             BufferedReader lector = new BufferedReader(new FileReader(nombreArchivo));
@@ -33,8 +31,14 @@ public class csvSeleccion {
                 String[] campos = linea.split(",");
 
                 if (campos.length >= 2) {
-                    String nombreSeleccion  = campos[0].trim();
-                    String rankingSeleccion = campos[1].trim();
+                    String numeroJugador    = campos[0].trim();
+                    String nombreJugador    = campos[1].trim();
+                    String posicionJugador  = campos[2].trim();
+
+                    Object[] jugador = {numeroJugador, nombreJugador, posicionJugador};
+
+                    // Agregar el array a la lista
+                    alemaniaData.add(jugador);
                 }
             }
             lector.close();
@@ -43,6 +47,6 @@ public class csvSeleccion {
             System.err.println("Hubo un error al leer el archivo: " + e.getMessage());
         }
 
-        return seleccionesData;
+        return alemaniaData;
     }
 }
