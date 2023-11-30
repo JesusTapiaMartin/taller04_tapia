@@ -29,4 +29,5 @@ public class Seleccion {
     public void setRanking(String ranking) {
         this.ranking = ranking;
     }
+
 }

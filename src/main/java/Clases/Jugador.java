@@ -3,14 +3,14 @@ package Clases;
 public class Jugador {
 
     // ===== ATRIBUTOS =====
-    private String nombre, numero, posicion;
+    private String numero,nombre, posicion;
 
 
     // ===== CONSTRUCTOR =====
-    public Jugador(String nombreJugador, String numeroJugador, String posicionJugador) {
-        this.nombre      = nombreJugador;
-        this.numero      = numeroJugador;
-        this.posicion    = posicionJugador;
+    public Jugador(String numero, String nombre, String posicion) {
+        this.numero     = numero;
+        this.nombre     = nombre;
+        this.posicion   = posicion;
     }
 
 
